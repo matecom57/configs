@@ -7,6 +7,7 @@ Incorporacion de una maquina (PC) a Don Clusterio
 lconcha
 Disponible en:
 https://github.com/lconcha/configs/blob/master/client_22-04.md
+https://github.com/lconcha/configs/blob/master/client_22-04.md
 
 Instalación 
 -----------
