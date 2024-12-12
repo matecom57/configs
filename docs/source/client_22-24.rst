@@ -1,4 +1,4 @@
-Usage
+Incorporacion de una maquina a Don Clusterio
 =====
 
 .. _installation:
@@ -6,7 +6,8 @@ Usage
 Installation
 ------------
 
-Instalación
+Paso 1
+------
 
 Iniciamos con una PC con dos discos duros, uno chico (120GB) y uno grande (>750GB). En este caso el chico es sdb y el grande es sda. Se instala ubuntu desktop 18.04 (full instalation, no minimal, y se dan permisos para third-party codecs). La instalación y el sistema operativo se hacen en inglés.
 Particiones
