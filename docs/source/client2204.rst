@@ -16,15 +16,12 @@ Iniciamos con una PC con dos discos duros, uno chico (**240GB**) y uno grande (*
 ## Particiones
 Cuando pregunta dónde instalar ubuntu, le decimos **"something else"** y ajustamos nuestras particiones de acuerdo a:
 
-```
-/dev/sdb1        efi	  536MB
-
-/dev/sdb2  ext4  /      120GB	
-
-/dev/sdb3  ext4  /tmp    100GB 
-/dev/sdb4        swap    20GB (esta siempre asi)
-/dev/sda1  ext4	/datos	  750GB
-```
+.. code-block::
+  /dev/sdb1        efi	  536MB
+  /dev/sdb2  ext4  /      120GB	
+  /dev/sdb3  ext4  /tmp    100GB 
+  /dev/sdb4        swap    20GB (esta siempre asi)
+  /dev/sda1  ext4	/datos	  750GB
 
 El bootloader queda en ``sdb`` (o equivalente en cada máquina) porque es el SSD en este caso.. 
 
