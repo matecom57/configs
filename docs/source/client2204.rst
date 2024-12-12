@@ -17,7 +17,9 @@ Cuando pregunta dónde instalar ubuntu, le decimos **"something else"** y ajusta
 
 ```
 /dev/sdb1        efi	  536MB
+
 /dev/sdb2  ext4  /      120GB	
+
 /dev/sdb3  ext4  /tmp    100GB 
 /dev/sdb4        swap    20GB (esta siempre asi)
 /dev/sda1  ext4	/datos	  750GB
