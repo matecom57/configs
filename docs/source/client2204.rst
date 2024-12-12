@@ -12,12 +12,12 @@ https://github.com/lconcha/configs/blob/master/client_22-04.md
 Instalación 
 -----------
 
-Iniciamos con una PC con dos discos duros, uno chico (**240GB**) y uno grande (**>750GB**). En este caso el chico es ``sdb`` y el grande es ``sda``. Se instala ubuntu desktop **22.04** (full instalation, no minimal, y se dan permisos para third-party codecs). La instalación y el sistema operativo se hacen en inglés.
+Iniciamos con una PC con dos discos duros, uno chico (**240GB**) y uno grande (**>750GB**). En este caso el chico es ``sdb`` y el grande es ``sda``. Se instala **UBUNTU Desktop 22.04** (full instalation, no minimal, y se dan permisos para third-party codecs). La instalación y el sistema operativo se hacen en inglés.
 
 Particiones
 -----------
 
-Cuando pregunta dónde instalar ubuntu, le decimos **"something else"** y ajustamos nuestras particiones de acuerdo a:
+Cuando pregunta dónde instalar **ubuntu**, le decimos ``"something else"`` y ajustamos nuestras particiones de acuerdo a:
 
 .. code-block::
 
@@ -29,16 +29,16 @@ Cuando pregunta dónde instalar ubuntu, le decimos **"something else"** y ajusta
 
 El **bootloader** queda en ``sdb`` (o equivalente en cada máquina) porque es el SSD en este caso.. 
 
-La particion en ``/tmp`` debe ser suficientemente grande, digamos **100GB**. Si no, ponerla en el otro disco. Esta partición es importante porque muchos trabajos del tipo de $fsl$ y $mrtrix$ ocupan muchos datos temporales que quedan en `/tmp` y,  si son muchos, puede llenar completamente el disco duro si la partición ``/`` y ``/tmp`` comparten la misma unidad física.
+La particion en ``/tmp`` debe ser suficientemente grande, digamos **100GB**. Si no, ponerla en el otro disco. Esta partición es importante porque muchos trabajos del tipo de $fsl$ y $mrtrix$ ocupan muchos datos temporales que quedan en ``/tmp`` y,  si son muchos, puede llenar completamente el disco duro si la partición ``/`` y ``/tmp`` comparten la misma unidad física.
 
-El nombre del primer usuario es ``soporte_$hostname`` y el password sigue la nomenclatura conocida. En caso de que solo contemos con un disco duro, entonces debe haber particiones distintas para ``/`` **(~70GB)**, ``/tmp``, ``/datos`` (si es necesario) y swap.
+El nombre del primer usuario es ``soporte_$hostname`` y el password sigue la nomenclatura conocida. En caso de que solo contemos con un disco duro, entonces debe haber particiones distintas para ``/`` **(~70GB)**, ``/tmp``, ``/datos`` (si es necesario) y ``swap``.
 
-El nombre del primer usuario es ``soporte_$hostname`` y el password sigue la nomenclatura conocida.
+El nombre del primer usuario es ``soporte_$hostname`` y el **password** sigue la nomenclatura conocida.
 
 root
 ----
 
-Habilitamos la cuenta de root porque si no vamos a tener problemas de **UID** con el usuario lconcha que vive en el servidor (el default del primer usuario es **UID=1000**, y lconcha en el servidor es también 1000). Con el usuario root vamos a poder instalar todo. Esto será particularmente útil justo antes de instalar el NIS. **El password de root deberá ser el mismo que el que usemos para soporte_HOSTNAME.**
+Habilitamos la cuenta de **root** porque si no vamos a tener problemas de **UID** con el usuario **lconcha** que vive en el servidor (el default del primer usuario es **UID=1000**, y lconcha en el servidor es también 1000). Con el usuario root vamos a poder instalar todo. Esto será particularmente útil justo antes de instalar el NIS. **El password de root deberá ser el mismo que el que usemos para soporte_HOSTNAME.**
 
 .. code-block::
 
@@ -87,7 +87,7 @@ Driver tarjeta de video
 Usemos el comando ``ubuntu-drivers``. Con ``-list``  nos muestra si hay algo que instalar. De ser el caso, usamos:
 
 ```
-ubuntu-drivers install
+$ubuntu-drivers install
 ```
 
 
