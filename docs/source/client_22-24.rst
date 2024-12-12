@@ -16,10 +16,10 @@ Particiones
 Cuando pregunta dónde instalar ubuntu, le decimos "something else" y ajustamos nuestras particiones de acuerdo a:
 
 ```
-/dev/sdb1	efi				536MB
-/dev/sdb2	ext4	/		60 a 120 GB (min 60 en caso de un solo disco chico, max 120 para SSDs grandes)
-/dev/sdb3 	ext4	/tmp	75GB (esta puede cambiar, ser mas grande; es lo que sobre del disco)
-/dev/sdb4   swap			15GB (esta siempre asi)
+/dev/sdb1	efi				    536MB
+/dev/sdb2	ext4	/		    120 GB 
+/dev/sdb3 ext4	/tmp	  100 GB 
+/dev/sdb4 swap			    20 GB (esta siempre asi)
 /dev/sda1	ext4	/datos	750GB
 ```
 
