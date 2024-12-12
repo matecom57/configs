@@ -27,10 +27,12 @@ El bootloader queda en ``sdb`` (o equivalente en cada máquina) porque es el SSD
 
 La particion en ``/tmp`` debe ser suficientemente grande, digamos **100GB**. Si no, ponerla en el otro disco. Esta partición es importante porque muchos trabajos del tipo de *fsl* y *mrtrix* ocupan muchos datos temporales que quedan en ``/tmp`` y, si son muchos, puede llenar completamente el disco duro si la partición /y /tmp comparten la misma unidad física.
 
-El nombre del primer usuario es soporte_$hostname y el password sigue la nomenclatura conocida. En caso de que solo contemos con un disco duro, entonces debe haber particiones distintas para / (~70GB), /tmp, /datos(si es necesario) y swap.
+El nombre del primer usuario es ``soporte_$hostname`` y el **password** sigue la nomenclatura conocida. En caso de que solo contemos con un disco duro, entonces debe haber particiones distintas para / (~70GB), /tmp, /datos(si es necesario) y swap.
 
 El nombre del primer usuario es soporte_$hostname y el password sigue la nomenclatura conocida.
+
 root
+----
 
 Habilitamos la cuenta de root porque si no vamos a tener problemas de UID con el usuario lconcha que vive en el servidor (el default del primer usuario es UID=1000, y lconcha en el servidor es también 1000). Con el usuario root vamos a poder instalar todo. Esto será particularmente útil justo antes de instalar el NIS. El password de root deberá ser el mismo que el que usemos para soporte_HOSTNAME.
 
