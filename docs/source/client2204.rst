@@ -11,7 +11,7 @@ https://github.com/lconcha/configs/blob/master/client_22-04.md
 Instalación 
 -----------
 
-Iniciamos con una PC con dos discos duros, uno chico (**240GB**) y uno grande (**>750GB**). En este caso el chico es ``sdb`` y el grande es ```sda```. Se instala ubuntu desktop **22.04** (full instalation, no minimal, y se dan permisos para third-party codecs). La instalación y el sistema operativo se hacen en inglés.
+Iniciamos con una PC con dos discos duros, uno chico (**240GB**) y uno grande (**>750GB**). En este caso el chico es ``sdb`` y el grande es ``sda``. Se instala ubuntu desktop **22.04** (full instalation, no minimal, y se dan permisos para third-party codecs). La instalación y el sistema operativo se hacen en inglés.
 
 Particiones
 -----------
@@ -26,24 +26,23 @@ Cuando pregunta dónde instalar ubuntu, le decimos **"something else"** y ajusta
   /dev/sdb4        swap    20GB (esta siempre asi)
   /dev/sda1  ext4	/datos	  750GB
 
-El bootloader queda en ``sdb`` (o equivalente en cada máquina) porque es el SSD en este caso.. 
+El **bootloader** queda en ``sdb`` (o equivalente en cada máquina) porque es el SSD en este caso.. 
 
-La particion en   ``/tmp`` debe ser suficientemente grande, digamos **100GB**. Si no, ponerla en el otro disco. Esta partición es importante porque muchos trabajos del tipo de $fsl$ y $mrtrix$ ocupan muchos datos temporales que quedan en `/tmp` y,  si son muchos, puede llenar completamente el disco duro si la partición ``/`` y ``/tmp`` comparten la misma unidad física.
+La particion en ``/tmp`` debe ser suficientemente grande, digamos **100GB**. Si no, ponerla en el otro disco. Esta partición es importante porque muchos trabajos del tipo de $fsl$ y $mrtrix$ ocupan muchos datos temporales que quedan en `/tmp` y,  si son muchos, puede llenar completamente el disco duro si la partición ``/`` y ``/tmp`` comparten la misma unidad física.
 
-El nombre del primer usuario es ``soporte_$hostname`` y el password sigue la nomenclatura conocida. En caso de que solo contemos con un disco duro, entonces debe haber particiones distintas para `/` **(~70GB)**, `/tmp`, `/datos`(si es necesario) y swap.
+El nombre del primer usuario es ``soporte_$hostname`` y el password sigue la nomenclatura conocida. En caso de que solo contemos con un disco duro, entonces debe haber particiones distintas para ``/`` **(~70GB)**, ``/tmp``, ``/datos`` (si es necesario) y swap.
 
-El nombre del primer usuario es `soporte_$hostname` y el password sigue la nomenclatura conocida.
+El nombre del primer usuario es ``soporte_$hostname`` y el password sigue la nomenclatura conocida.
 
 root
 ----
 
-Habilitamos la cuenta de root porque si no vamos a tener problemas de UID con el usuario lconcha que vive en el servidor (el default del primer usuario es UID=1000, y lconcha en el servidor es también 1000). Con el usuario root vamos a poder instalar todo. Esto será particularmente útil justo antes de instalar el NIS. **El password de root deberá ser el mismo que el que usemos para soporte_HOSTNAME.**
+Habilitamos la cuenta de root porque si no vamos a tener problemas de **UID** con el usuario lconcha que vive en el servidor (el default del primer usuario es **UID=1000**, y lconcha en el servidor es también 1000). Con el usuario root vamos a poder instalar todo. Esto será particularmente útil justo antes de instalar el NIS. **El password de root deberá ser el mismo que el que usemos para soporte_HOSTNAME.**
 
-```
-sudo passwd root
+.. code-block::
 
-sudo passwd -u root
-```
+  sudo passwd root
+  sudo passwd -u root
 
 Red
 ---
@@ -53,51 +52,64 @@ En terminal
 
 login root (en nueva terminal)
 
-Utilizar el comando `nmtui`  para configurar la red.
+Utilizar el comando ``nmtui``  para configurar la red.
 
 Navegamos a la conección a editar y camniamos a manual la configuraicon de IPv4.
 
-Address: 172.24.*.* (según computadora)
-Gateway: 172.24.80.126 (cambia en cada laboratorio)
-DNS servers: 132.248.10.2,132.248.204.1,208.67.222.222	
+.. code-block::
 
-## En interfaz grafica
-Ir a `settings`, después a `network` y en `wired` dar al ícono de configuración. En la pestaña `IPv4`. Cambiamos a manual.
+  Address: 172.24.*.* (según computadora)
+  Gateway: 172.24.80.126 (cambia en cada laboratorio)
+  DNS servers: 132.248.10.2,132.248.204.1,208.67.222.222	
 
-Address: 172.24.*.* (según computadora)
-Netmask: 255.255.255.224
-Gateway: 172.24.80.126 (cambia en cada laboratorio)
+En interfaz grafica
+-------------------
+
+Ir a ``settings``, después a ``network`` y en ``wired`` dar al ícono de configuración. En la pestaña ``IPv4``. Cambiamos a manual.
+
+.. code-block::
+
+  Address: 172.24.*.* (según computadora)
+  Netmask: 255.255.255.224
+  Gateway: 172.24.80.126 (cambia en cada laboratorio)
+
 Cambiar el DNS de Automatic a OFF y escribir los nuestros:
 DNS: 132.248.10.2,132.248.204.1,208.67.222.222	
 
-Poner `apply` y luego apagar y prender el ethernet device. 
-`ip address` nos debería indicar bien nuestra dirección IP	
+Poner ``apply`` y luego apagar y prender el ethernet device. 
+``ip address`` nos debería indicar bien nuestra dirección IP	
 
 
-# Driver tarjeta de video
-Usemos el comando `ubuntu-drivers`. Con `-list`  nos muestra si hay algo que instalar. De ser el caso, usamos:
+Driver tarjeta de video
+-----------------------
+
+Usemos el comando ``ubuntu-drivers``. Con ``-list``  nos muestra si hay algo que instalar. De ser el caso, usamos:
 
 ```
 ubuntu-drivers install
 ```
 
 
-# Reboot
-Una vez que reinicie la máquina, nos saludará la interface gráfica llamada `gdm`, donde podemos escribir nuestro nombre de usuario. Para fines de configuración, no la vamos a utilizar, porque vamos a hacer login de texto con el usuario `root`. Para ello:
-**presionamos simultáneamente `Ctrl+Alt+F3` y hacemos login como root**.
+Reboot
+------
+
+Una vez que reinicie la máquina, nos saludará la interface gráfica llamada `gdm`, donde podemos escribir nuestro nombre de usuario. Para fines de configuración, no la vamos a utilizar, porque vamos a hacer login de texto con el usuario ``root``. Para ello:
+**presionamos simultáneamente ``Ctrl+Alt+F3`` y hacemos login como ``root``**.
 
 :warning: ** No olvidar hacer login como root! **
 
+Hosts
+-----
 
-# Hosts
 Tengo un script que ayuda a configurar los hosts.
 De aquí en adelante se asume que **hicimos login (de texto) como root.**
 Nota: Por ahora el servidor es hahn con ip 172.24.80.109
-```
-scp -r soporte@172.24.80.109:/home/inb/soporte/configs .
-cd configs
-./fmrilab_fix_hosts_file.sh
-```
+
+.. code-block::
+
+  scp -r soporte@172.24.80.109:/home/inb/soporte/configs .
+  cd configs
+  ./fmrilab_fix_hosts_file.sh
 
 Probamos con un `ping hahn`, que nos debe funcionar.
 
