@@ -10,7 +10,7 @@ Installation
 Paso 1
 ------
 
-Iniciamos con una PC con dos discos duros, uno chico (**240GB**) y uno grande (**>750GB**). En este caso el chico es ``sdb`` y el grande es ``sda``. Se instala ubuntu desktop 18.04 (full instalation, no minimal, y se dan permisos para third-party codecs). La instalación y el sistema operativo se hacen en inglés.
+Iniciamos con una PC con dos discos duros, uno chico (**240GB**) y uno grande (**>750GB**). En este caso el chico es ``sdb`` y el grande es ``sda``. Se instala ubuntu desktop 22.04 (full instalation, no minimal, y se dan permisos para third-party codecs). La instalación y el sistema operativo se hacen en inglés.
 Particiones
 
 Cuando pregunta dónde instalar ubuntu, le decimos **"something else"** y ajustamos nuestras particiones de acuerdo a:
@@ -23,9 +23,9 @@ Cuando pregunta dónde instalar ubuntu, le decimos **"something else"** y ajusta
 /dev/sda1	ext4	/datos	750GB
 ```
 
-El bootloader queda en sdb (o equivalente en cada máquina) porque es el SSD en este caso..
+El bootloader queda en ``sdb`` (o equivalente en cada máquina) porque es el SSD en este caso..
 
-La particion en /tmp debe ser suficientemente grande, digamos 75GB. Si no, ponerla en el otro disco. Esta partición es importante porque muchos trabajos del tipo de f s l y m r t r i x ocupan muchos datos temporales que quedan en /tmp y, si son muchos, puede llenar completamente el disco duro si la partición /y /tmp comparten la misma unidad física.
+La particion en ``/tmp`` debe ser suficientemente grande, digamos **100GB**. Si no, ponerla en el otro disco. Esta partición es importante porque muchos trabajos del tipo de *fsl* y *mrtrix* ocupan muchos datos temporales que quedan en ``/tmp`` y, si son muchos, puede llenar completamente el disco duro si la partición /y /tmp comparten la misma unidad física.
 
 El nombre del primer usuario es soporte_$hostname y el password sigue la nomenclatura conocida. En caso de que solo contemos con un disco duro, entonces debe haber particiones distintas para / (~70GB), /tmp, /datos(si es necesario) y swap.
 
