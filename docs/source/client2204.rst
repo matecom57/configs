@@ -13,10 +13,13 @@ Instalación
 
 Iniciamos con una PC con dos discos duros, uno chico (**240GB**) y uno grande (**>750GB**). En este caso el chico es `sdb` y el grande es `sda`. Se instala ubuntu desktop **22.04** (full instalation, no minimal, y se dan permisos para third-party codecs). La instalación y el sistema operativo se hacen en inglés.
 
-## Particiones
+Particiones
+-----------
+
 Cuando pregunta dónde instalar ubuntu, le decimos **"something else"** y ajustamos nuestras particiones de acuerdo a:
 
 .. code-block::
+
   /dev/sdb1        efi	  536MB
   /dev/sdb2  ext4  /      120GB	
   /dev/sdb3  ext4  /tmp    100GB 
