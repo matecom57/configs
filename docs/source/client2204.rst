@@ -40,6 +40,7 @@ Habilitamos la cuenta de root porque si no vamos a tener problemas de UID con el
 
 ```
 sudo passwd root
+
 sudo passwd -u root
 ```
 
