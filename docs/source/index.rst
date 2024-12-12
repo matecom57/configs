@@ -19,4 +19,5 @@ Contents
 .. toctree::
 
    usage
+   client_22-04
    api
