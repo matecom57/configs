@@ -36,8 +36,10 @@ root
 
 Habilitamos la cuenta de root porque si no vamos a tener problemas de UID con el usuario lconcha que vive en el servidor (el default del primer usuario es UID=1000, y lconcha en el servidor es también 1000). Con el usuario root vamos a poder instalar todo. Esto será particularmente útil justo antes de instalar el NIS. El password de root deberá ser el mismo que el que usemos para soporte_HOSTNAME.
 
+```
 sudo passwd root
 sudo passwd -u root
+```
 
 Red
 En terminal
