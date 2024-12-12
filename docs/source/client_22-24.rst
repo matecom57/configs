@@ -186,7 +186,9 @@ Configurar fmrilab_profile
 
 Copiamos fmrilab_profile.sh a /etc/profile.d . Este script contiene las configuraciones de arranque para las máquinas en don clusterio. Por el momento solo consifte en exportar la variable de sistema FMRILAB_CONFIGFILE que tiene todo los paths de los software
 
+```
 ./fmrilab_config_profile.sh
+```
 
 reboot
 
