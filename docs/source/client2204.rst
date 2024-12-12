@@ -1,5 +1,5 @@
 ======
-Incorporacion de una maquiina (PC) a Don Clusterio
+Incorporacion de una maquina (PC) a Don Clusterio
 ======
 
 
@@ -11,7 +11,7 @@ https://github.com/lconcha/configs/blob/master/client_22-04.md
 Instalación 
 -----------
 
-Iniciamos con una PC con dos discos duros, uno chico (**240GB**) y uno grande (**>750GB**). En este caso el chico es `sdb` y el grande es `sda`. Se instala ubuntu desktop **22.04** (full instalation, no minimal, y se dan permisos para third-party codecs). La instalación y el sistema operativo se hacen en inglés.
+Iniciamos con una PC con dos discos duros, uno chico (**240GB**) y uno grande (**>750GB**). En este caso el chico es ``sdb`` y el grande es ```sda```. Se instala ubuntu desktop **22.04** (full instalation, no minimal, y se dan permisos para third-party codecs). La instalación y el sistema operativo se hacen en inglés.
 
 Particiones
 -----------
